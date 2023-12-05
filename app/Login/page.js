@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
-function page() {
+function Login() {
   return (
-    <div>page</div>
-  )
+    <div className="flex justify-center items-center mt-[50%]">
+      <button>Login with Google</button>
+    </div>
+  );
 }
 
-export default page
+export default Login;

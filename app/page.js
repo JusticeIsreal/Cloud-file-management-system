@@ -1,11 +1,11 @@
-"use client"
+"use client";
 import Image from "next/image";
-
+import { useSession, signIn, signOut } from "next-auth/react";
 export default function Home() {
- 
   return (
     <main className="font-bold">
-      <div className="carousel rounded-box">
+      <button onClick={() => signIn()}>enter</button>
+      {/* <div className="carousel rounded-box">
         <div className="carousel-item">
           <img
             src="https://daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.jpg"
@@ -48,7 +48,7 @@ export default function Home() {
             alt="Burger"
           />
         </div>
-      </div>
+      </div> */}
     </main>
   );
 }
