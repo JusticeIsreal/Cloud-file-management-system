@@ -1,54 +1,19 @@
 "use client";
-import Image from "next/image";
-import { useSession, signIn, signOut } from "next-auth/react";
+// pages/index.js (or any other relevant page file)
+import { useSession, signIn } from "next-auth/react";
+import { redirect } from "next/navigation";
+
+import { useEffect } from "react";
+
 export default function Home() {
-  return (
-    <main className="font-bold">
-      <button onClick={() => signIn()}>enter</button>
-      {/* <div className="carousel rounded-box">
-        <div className="carousel-item">
-          <img
-            src="https://daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.jpg"
-            alt="Burger"
-          />
-        </div>
-        <div className="carousel-item">
-          <img
-            src="https://daisyui.com/images/stock/photo-1565098772267-60af42b81ef2.jpg"
-            alt="Burger"
-          />
-        </div>
-        <div className="carousel-item">
-          <img
-            src="https://daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.jpg"
-            alt="Burger"
-          />
-        </div>
-        <div className="carousel-item">
-          <img
-            src="https://daisyui.com/images/stock/photo-1494253109108-2e30c049369b.jpg"
-            alt="Burger"
-          />
-        </div>
-        <div className="carousel-item">
-          <img
-            src="https://daisyui.com/images/stock/photo-1550258987-190a2d41a8ba.jpg"
-            alt="Burger"
-          />
-        </div>
-        <div className="carousel-item">
-          <img
-            src="https://daisyui.com/images/stock/photo-1559181567-c3190ca9959b.jpg"
-            alt="Burger"
-          />
-        </div>
-        <div className="carousel-item">
-          <img
-            src="https://daisyui.com/images/stock/photo-1601004890684-d8cbf643f5f2.jpg"
-            alt="Burger"
-          />
-        </div>
-      </div> */}
-    </main>
-  );
+  const { data: session } = useSession();
+  // const router = useRouter();
+
+  useEffect(() => {
+    if (!session) {
+      redirect("/login");
+    }
+  }, [session]);
+
+  return <main className="font-bold"></main>;
 }
