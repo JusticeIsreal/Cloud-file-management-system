@@ -19,8 +19,13 @@ export default async function RootLayout({ children }) {
     <html lang="en" style={{ background: "white" }}>
       <body className={inter.className}>
         <SessionProvider session={session}>
-          <SideNavBar />
-          <main>{children}</main>
+          <div className="flex">
+            <SideNavBar />
+            <div className="grid grid-cols-1 md:grid-cols-3 w-full">
+              <main className="col-span-2 bg-blue-100 p-2">{children}</main>
+              <div className="bg-white p-2">storage</div>
+            </div>
+          </div>
         </SessionProvider>
       </body>
     </html>

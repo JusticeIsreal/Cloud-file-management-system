@@ -4,6 +4,7 @@ import { useSession, signIn } from "next-auth/react";
 import { redirect } from "next/navigation";
 
 import { useEffect } from "react";
+import SearchBar from "./components/SearchBar";
 
 export default function Home() {
   const { data: session } = useSession();
@@ -15,5 +16,9 @@ export default function Home() {
     }
   }, [session]);
 
-  return <main className="font-bold"></main>;
+  return (
+    <main>
+      <SearchBar />
+    </main>
+  );
 }
