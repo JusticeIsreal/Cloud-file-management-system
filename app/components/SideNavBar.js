@@ -1,7 +1,10 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
+import menu from "../data/menu";
 
 function SideNavBar() {
+  const [activeIndex, setActiveIndex] = useState(0);
   return (
     <div className="w-[200px] bg-white h-screen p-5 sticky top-0 z-10 shadow-blue-200 shadow-md">
       <div className="flex justify-center ">
@@ -46,6 +49,34 @@ function SideNavBar() {
           />
         </svg>
       </button>
+
+      <div className="mt-4">
+        {menu.list.map((item, index) => (
+          <h2
+            onClick={() => setActiveIndex(index)}
+            key={item.id}
+            className={`flex gap-2 items-center p-2 mt-3 hover:bg-blue-500 hover:text-white rounded-md cursor-pointer ${
+              activeIndex == index ? "bg-blue-500 text-white" : null
+            }`}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d={item.logo}
+              />
+            </svg>
+            {item.name}
+          </h2>
+        ))}
+      </div>
     </div>
   );
 }
