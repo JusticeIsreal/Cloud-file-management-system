@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 
 import { useEffect } from "react";
 import SearchBar from "./components/SearchBar";
+import FolderList from "./components/Folder/FolderList";
 
 export default function Home() {
   const { data: session } = useSession();
@@ -19,6 +20,7 @@ export default function Home() {
   return (
     <main>
       <SearchBar />
+      <FolderList />
     </main>
   );
 }

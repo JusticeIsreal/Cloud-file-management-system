@@ -15,15 +15,15 @@ function SideNavBar() {
           height={60}
         />
       </div>
-      <button className="flex gap-2 justify-between items-center w-full bg-blue-500 p-2 text-white rounded-md px-3 mt-5 hover:scale-105 transition-all">
-        Add New File{" "}
+      <button className="flex gap-2 justify-between items-center w-full bg-blue-500 p-2 text-white rounded-md px-3 mt-5 hover:scale-105 transition-all text-[10px] md:text-[13px]">
+        New File{" "}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-6 h-6"
+          className="w-4 h-4 md:w-6 md:h-6"
         >
           <path
             strokeLinecap="round"
@@ -32,15 +32,15 @@ function SideNavBar() {
           />
         </svg>
       </button>
-      <button className="flex gap-2 justify-between items-center bg-sky-400 w-full p-2 text-white rounded-md px-3 mt-2 hover:scale-105 transition-all">
-        New Folder{" "}
+      <button className="flex gap-2 justify-between items-center bg-sky-400 w-full p-2 text-white rounded-md px-3 mt-2 hover:scale-105 transition-all text-[9px] md:text-[13px]">
+        New Folder
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-6 h-6"
+          className="w-4 h-4 md:w-6 md:h-6 "
         >
           <path
             strokeLinecap="round"
@@ -65,7 +65,7 @@ function SideNavBar() {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="w-6 h-6"
+              className="w-4 h-4 md:w-6 md:h-6"
             >
               <path
                 strokeLinecap="round"
