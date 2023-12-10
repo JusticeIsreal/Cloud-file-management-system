@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import menu from "../data/menu";
+import CreateFolderModal from "./Folder/CreateFolderModal";
 
 function SideNavBar() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -32,7 +33,10 @@ function SideNavBar() {
           />
         </svg>
       </button>
-      <button className="flex gap-2 justify-between items-center bg-sky-400 w-full p-2 text-white rounded-md px-3 mt-2 hover:scale-105 transition-all text-[9px] md:text-[13px]">
+      <button
+        onClick={() => document.getElementById("my_modal_3").showModal()}
+        className="flex gap-2 justify-between items-center bg-sky-400 w-full p-2 text-white rounded-md px-3 mt-2 hover:scale-105 transition-all text-[9px] md:text-[13px]"
+      >
         New Folder
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -77,6 +81,12 @@ function SideNavBar() {
           </h2>
         ))}
       </div>
+      {/* You can open the modal using document.getElementById('ID').showModal() method */}
+      <dialog id="my_modal_3" className="modal">
+        <div className="modal-box bg-white">
+          <CreateFolderModal />
+        </div>
+      </dialog>
     </div>
   );
 }

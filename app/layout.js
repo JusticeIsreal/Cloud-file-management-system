@@ -3,6 +3,7 @@ import SessionProvider from "./components/SessionProvider";
 import { getServerSession } from "next-auth";
 import "./globals.css";
 import SideNavBar from "./components/SideNavBar";
+import CreateFolderModal from "./components/Folder/CreateFolderModal";
 
 const inter = Inter({ subsets: ["latin"] });
 
