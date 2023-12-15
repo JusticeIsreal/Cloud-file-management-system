@@ -1,16 +1,23 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
+import { db2 } from "@/Firebase";
+import { setDoc } from "firebase/firestore";
+import { useSession } from "next-auth/react";
 function CreateFolderModal() {
-    const [folderName, setFolderName] = useState();
-    
-    const onCreate = () => {
-        console.log(folderName);
-    }
+  const { data: session } = useSession();
+  const [folderName, setFolderName] = useState();
+  const docId = Date.now().toString();
+  const onCreate = async () => {
+    await setDoc(doc(db2, "Folder", docId), {
+      name: folderName,
+      id: docId,
+      createdBy: session.user.email,
+    });
+  };
   return (
     <div>
       <form method="dialog">
-        {/* if there is a button in form, it will close the modal */}
         <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
           ✕
         </button>
