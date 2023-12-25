@@ -2,12 +2,13 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { db2 } from "@/Firebase";
-import { setDoc } from "firebase/firestore";
+import { setDoc, doc } from "firebase/firestore";
 import { useSession } from "next-auth/react";
 function CreateFolderModal() {
   const { data: session } = useSession();
   const [folderName, setFolderName] = useState();
   const docId = Date.now().toString();
+
   const onCreate = async () => {
     await setDoc(doc(db2, "Folder", docId), {
       name: folderName,
@@ -15,6 +16,7 @@ function CreateFolderModal() {
       createdBy: session.user.email,
     });
   };
+// khgshjd
   return (
     <div>
       <form method="dialog">

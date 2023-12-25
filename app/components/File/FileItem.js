@@ -35,7 +35,7 @@ function FileItem({ file }) {
       <div className="grid grid-cols-3 place-content-start">
         <h2 className="text-[15px]">
           {/* {moment(file.modifiedAt).format("MMMM DD, YYYY")} */}
-          {moment(file.modifiedAt).format("MMMM DD, YYYY")}
+          {/* {moment(file.modifiedAt).format("MMMM DD, YYYY")} */}
         </h2>
       </div>
       <h2 className="text-[15px]">
